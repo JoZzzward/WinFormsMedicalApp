@@ -5,21 +5,14 @@ using System.Windows.Forms;
 
 namespace JKHApp
 {
-    public partial class Profile : Form
+    public partial class ProfileForm : Form
     {
-        Login l;
-        Form1 f1;
-        public Profile()
+        public ProfileForm()
         {
             InitializeComponent();
             AppDBContext db = new AppDBContext();
             SqlDataAdapter adapter = new SqlDataAdapter();
             DataTable dt = new DataTable();
-            l = new Login();
-            f1 = new Form1();
-
-
-
             SqlCommand cmd = new SqlCommand($"SELECT * FROM Payer WHERE LastName = '{Login.login}' AND Password = '{Login.password}'", db.GetConnection());
             adapter.SelectCommand = cmd;
             adapter.Fill(dt);
@@ -35,10 +28,9 @@ namespace JKHApp
             }
             else
             {
-                Form1.isAdmin = false;
-                Hide();
-                f1.Hide();
+                Login l = new Login();
                 l.ShowDialog();
+                Hide();
             }
         }
 
@@ -51,7 +43,7 @@ namespace JKHApp
             adapter.SelectCommand = cmd;
             adapter.Fill(dt);
 
-            Refresh();
+            this.Refresh();
         }
 
         private void ProfileBackBtn_Click(object sender, EventArgs e)

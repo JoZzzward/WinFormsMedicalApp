@@ -192,6 +192,7 @@
             this.Controls.Add(this.nameText);
             this.Controls.Add(this.label1);
             this.Name = "EnterData";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EnterData";
             this.ResumeLayout(false);
             this.PerformLayout();

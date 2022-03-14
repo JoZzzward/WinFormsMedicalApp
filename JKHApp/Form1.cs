@@ -23,7 +23,6 @@ namespace JKHApp
             db = new AppDBContext();
             adapter = new SqlDataAdapter();
             dt = new DataTable();
-            dataGridView.AutoResizeRows();
             db.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Payer", db.GetConnection());
             adapter.SelectCommand = cmd;
@@ -53,7 +52,10 @@ namespace JKHApp
         private void ExitBtn_Click(object sender, EventArgs e)
         {
             MessageBox.Show("Вы вышли из учетной записи");
-            Form1.ResetAdminData();
+            Form1.isAdmin = false;
+            Login.login = "";
+            Login.password = "";
+            SendDataBtn.Visible = false;
         }
 
 
@@ -67,7 +69,7 @@ namespace JKHApp
         {
             if (Login.login != "" && Login.password != "")
             {
-                Profile p = new Profile();
+                ProfileForm p = new ProfileForm();
                 p.ShowDialog();
             }
             else
@@ -108,6 +110,11 @@ namespace JKHApp
         private void tariffReceiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
             dataGridView.DataSource = "tariffReceiptBindingSource";
+        }
+
+        private void CloseBtn_Click(object sender, EventArgs e)
+        {
+            Close();
         }
 
         /* Внесение данных через настройки админа

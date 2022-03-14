@@ -1,6 +1,6 @@
 ﻿namespace JKHApp
 {
-    partial class Profile
+    partial class ProfileForm
     {
         /// <summary>
         /// Required designer variable.
@@ -172,7 +172,7 @@
             this.ProfileBackBtn.UseVisualStyleBackColor = true;
             this.ProfileBackBtn.Click += new System.EventHandler(this.ProfileBackBtn_Click);
             // 
-            // Profile
+            // ProfileForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -191,6 +191,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.Name);
             this.Controls.Add(this.label1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Profile";
             this.ResumeLayout(false);
             this.PerformLayout();

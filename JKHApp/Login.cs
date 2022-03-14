@@ -9,11 +9,10 @@ namespace JKHApp
     {
         public static string login;
         public static string password;
-        Form1 f1;
+
         public Login()
         {
             InitializeComponent();
-            f1 = new Form1();
         }
 
         private void loginEnter_Click(object sender, EventArgs e)
@@ -31,16 +30,14 @@ namespace JKHApp
             password = loginPassword.Text;
 
             if (loginText.Text == "Дьяконов" && loginPassword.Text == "111")
-            {
                 Form1.isAdmin = true;
-            }
             else
                 Form1.isAdmin = false;
             if (dt.Rows.Count > 0)
             {
-               
+                Form1 f = new Form1();
                 Hide();
-                f1.Show();
+                f.Show();
             }
             else
                 MessageBox.Show("No");
@@ -49,8 +46,6 @@ namespace JKHApp
         private void BackBtn_Click(object sender, EventArgs e)
         {
             
-            Hide();
-            f1.Show();
         }
     }
 }

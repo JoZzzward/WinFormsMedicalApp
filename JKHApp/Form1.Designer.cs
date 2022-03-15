@@ -30,18 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.payerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jKHInfoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.jKHInfoDataSet = new JKHApp.JKHInfoDataSet();
             this.tariffReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.payerTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.PayerTableAdapter();
             this.SendDataBtn = new System.Windows.Forms.Button();
             this.ProfileBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
@@ -52,15 +45,22 @@
             this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tariffReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.homeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.homeTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.HomeTableAdapter();
             this.apartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.apartmentTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.ApartmentTableAdapter();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.CompanyTableAdapter();
             this.receiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CloseBtn = new System.Windows.Forms.Button();
+            this.payerTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.PayerTableAdapter();
+            this.homeTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.HomeTableAdapter();
+            this.apartmentTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.ApartmentTableAdapter();
+            this.companyTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.CompanyTableAdapter();
             this.receiptTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.ReceiptTableAdapter();
             this.tariffReceiptTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.TariffReceiptTableAdapter();
-            this.CloseBtn = new System.Windows.Forms.Button();
+            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.payerBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.jKHInfoDataSetBindingSource)).BeginInit();
@@ -78,8 +78,9 @@
             this.dataGridView.AccessibleRole = System.Windows.Forms.AccessibleRole.ScrollBar;
             this.dataGridView.AllowUserToAddRows = false;
             this.dataGridView.AllowUserToDeleteRows = false;
+            this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.AllCells;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -90,7 +91,7 @@
             this.ageDataGridViewTextBoxColumn,
             this.addressDataGridViewTextBoxColumn});
             this.dataGridView.DataSource = this.payerBindingSource;
-            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
+            this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.Location = new System.Drawing.Point(0, 93);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
@@ -98,60 +99,6 @@
             this.dataGridView.RowTemplate.Height = 24;
             this.dataGridView.Size = new System.Drawing.Size(800, 359);
             this.dataGridView.TabIndex = 0;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            this.idDataGridViewTextBoxColumn.Width = 47;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 73;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.lastNameDataGridViewTextBoxColumn.Width = 98;
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.middleNameDataGridViewTextBoxColumn.Width = 114;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            this.ageDataGridViewTextBoxColumn.Width = 61;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressDataGridViewTextBoxColumn.Width = 87;
             // 
             // payerBindingSource
             // 
@@ -184,14 +131,10 @@
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
             // 
-            // payerTableAdapter
-            // 
-            this.payerTableAdapter.ClearBeforeFill = true;
-            // 
             // SendDataBtn
             // 
             this.SendDataBtn.BackColor = System.Drawing.Color.Orange;
-            this.SendDataBtn.Location = new System.Drawing.Point(0, 31);
+            this.SendDataBtn.Location = new System.Drawing.Point(12, 31);
             this.SendDataBtn.Name = "SendDataBtn";
             this.SendDataBtn.Size = new System.Drawing.Size(152, 54);
             this.SendDataBtn.TabIndex = 4;
@@ -274,40 +217,20 @@
             this.homeBindingSource.DataMember = "Home";
             this.homeBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
             // 
-            // homeTableAdapter
-            // 
-            this.homeTableAdapter.ClearBeforeFill = true;
-            // 
             // apartmentBindingSource
             // 
             this.apartmentBindingSource.DataMember = "Apartment";
             this.apartmentBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
-            // 
-            // apartmentTableAdapter
-            // 
-            this.apartmentTableAdapter.ClearBeforeFill = true;
             // 
             // companyBindingSource
             // 
             this.companyBindingSource.DataMember = "Company";
             this.companyBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
             // 
-            // companyTableAdapter
-            // 
-            this.companyTableAdapter.ClearBeforeFill = true;
-            // 
             // receiptBindingSource
             // 
             this.receiptBindingSource.DataMember = "Receipt";
             this.receiptBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
-            // 
-            // receiptTableAdapter
-            // 
-            this.receiptTableAdapter.ClearBeforeFill = true;
-            // 
-            // tariffReceiptTableAdapter
-            // 
-            this.tariffReceiptTableAdapter.ClearBeforeFill = true;
             // 
             // CloseBtn
             // 
@@ -320,6 +243,84 @@
             this.CloseBtn.Text = "x";
             this.CloseBtn.UseVisualStyleBackColor = true;
             this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
+            // 
+            // payerTableAdapter
+            // 
+            this.payerTableAdapter.ClearBeforeFill = true;
+            // 
+            // homeTableAdapter
+            // 
+            this.homeTableAdapter.ClearBeforeFill = true;
+            // 
+            // apartmentTableAdapter
+            // 
+            this.apartmentTableAdapter.ClearBeforeFill = true;
+            // 
+            // companyTableAdapter
+            // 
+            this.companyTableAdapter.ClearBeforeFill = true;
+            // 
+            // receiptTableAdapter
+            // 
+            this.receiptTableAdapter.ClearBeforeFill = true;
+            // 
+            // tariffReceiptTableAdapter
+            // 
+            this.tariffReceiptTableAdapter.ClearBeforeFill = true;
+            // 
+            // idDataGridViewTextBoxColumn
+            // 
+            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
+            this.idDataGridViewTextBoxColumn.FillWeight = 128.3422F;
+            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
+            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
+            this.idDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // nameDataGridViewTextBoxColumn
+            // 
+            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
+            this.nameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
+            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
+            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
+            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // ageDataGridViewTextBoxColumn
+            // 
+            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
+            this.ageDataGridViewTextBoxColumn.FillWeight = 94.33157F;
+            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
+            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
+            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // addressDataGridViewTextBoxColumn
+            // 
+            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
+            this.addressDataGridViewTextBoxColumn.FillWeight = 94.33157F;
+            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
+            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
+            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // Form1
             // 
@@ -380,13 +381,13 @@
         private JKHInfoDataSetTableAdapters.ReceiptTableAdapter receiptTableAdapter;
         private System.Windows.Forms.BindingSource tariffReceiptBindingSource;
         private JKHInfoDataSetTableAdapters.TariffReceiptTableAdapter tariffReceiptTableAdapter;
+        private System.Windows.Forms.Button CloseBtn;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Button CloseBtn;
     }
 }
 

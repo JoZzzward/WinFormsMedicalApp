@@ -45,7 +45,7 @@ namespace JKHApp
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            
+            Hide();
         }
     }
 }

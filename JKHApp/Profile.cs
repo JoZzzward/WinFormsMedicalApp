@@ -29,8 +29,8 @@ namespace JKHApp
             else
             {
                 Login l = new Login();
-                l.ShowDialog();
                 Hide();
+                l.ShowDialog();
             }
         }
 

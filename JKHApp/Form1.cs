@@ -26,12 +26,10 @@ namespace JKHApp
             db.OpenConnection();
             SqlCommand cmd = new SqlCommand("SELECT * FROM Payer", db.GetConnection());
             adapter.SelectCommand = cmd;
+            dataGridView.AutoGenerateColumns = true;
             adapter.Fill(dt);
 
-            if (isAdmin)
-                SendDataBtn.Visible = true;
-            else
-                SendDataBtn.Visible = false;
+            SendDataBtn.Visible = isAdmin ? true : false;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -51,11 +49,11 @@ namespace JKHApp
         }
         private void ExitBtn_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Вы вышли из учетной записи");
             Form1.isAdmin = false;
             Login.login = "";
             Login.password = "";
             SendDataBtn.Visible = false;
+            MessageBox.Show("Вы вышли из учетной записи");
         }
 
 
@@ -74,9 +72,9 @@ namespace JKHApp
             }
             else
             {
-                Login l = new Login();
                 Login.login = "";
                 Login.password = "";
+                Login l = new Login();
                 Hide();
                 l.ShowDialog();
             }
@@ -84,32 +82,32 @@ namespace JKHApp
 
         private void payerToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "payerBindingSource";
+            dataGridView.DataSource = payerTableAdapter.GetData();
         }
 
         private void homeToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "homeBindingSource";
+            dataGridView.DataSource = homeTableAdapter.GetData();
         }
 
         private void apartmentToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "apartmentBindingSource";
+            dataGridView.DataSource = apartmentTableAdapter.GetData();
         }
 
         private void companyToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "companyBindingSource";
+            dataGridView.DataSource = companyTableAdapter.GetData();
         }
 
         private void receiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "receiptBindingSource";
+            dataGridView.DataSource = receiptTableAdapter.GetData();
         }
 
         private void tariffReceiptToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            dataGridView.DataSource = "tariffReceiptBindingSource";
+            dataGridView.DataSource = tariffReceiptTableAdapter.GetData();
         }
 
         private void CloseBtn_Click(object sender, EventArgs e)

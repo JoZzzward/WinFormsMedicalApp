@@ -1,24 +1,27 @@
-﻿using System.Data;
+﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 
 namespace JKHApp
 {
-    public class AppDBContext
+    public class AppDbContext
     {
-        SqlConnection sqlConn = new SqlConnection("Data Source=LAPTOP-538EEJNO\\MSSQLSERVER01;Database = JKHInfo; Integrated Security = True;");
-        
-        public void OpenConnection()
+        string connectionString;
+        public AppDbContext()
         {
-            if (sqlConn.State == ConnectionState.Closed)
-                sqlConn.Open();
+            connectionString = "Data Source=LAPTOP-538EEJNO\\MSSQLSERVER01;Initial Catalog=МедицинскийЦентр;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False";
         }
+        public SqlConnection GetDBConnection() =>
+            new SqlConnection(connectionString);
 
-        public void CloseConnection()
+        public int InvokeSqlQuery(string sqlQuery)
         {
-            if (sqlConn.State == ConnectionState.Open)
-                sqlConn.Close();
-        }
+            SqlCommand cmd = new SqlCommand(sqlQuery, this.GetDBConnection()); 
+            SqlDataAdapter adapter = new SqlDataAdapter(cmd);
+            DataTable dt = new DataTable();
+            adapter.Fill(dt);
 
-        public SqlConnection GetConnection() => sqlConn;
+            return dt.Rows.Count;
+        }
     }
 }

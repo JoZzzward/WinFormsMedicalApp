@@ -7,45 +7,30 @@ namespace JKHApp
 {
     public partial class Login : Form
     {
-        public static string login;
-        public static string password;
-
+        AppDbContext db;
         public Login()
         {
             InitializeComponent();
+            db = new AppDbContext();
         }
 
         private void loginEnter_Click(object sender, EventArgs e)
         {
-            AppDBContext db = new AppDBContext();
-            SqlDataAdapter adapter = new SqlDataAdapter();
-            DataTable dt = new DataTable();
-
-            SqlCommand cmd = new SqlCommand(
-                $"SELECT * FROM Payer WHERE LastName = '{loginText.Text}' AND Password = '{loginPassword.Text}'", db.GetConnection());
-            adapter.SelectCommand = cmd;
-            adapter.Fill(dt);
-
-            login = loginText.Text;
-            password = loginPassword.Text;
-
-            if (loginText.Text == "Дьяконов" && loginPassword.Text == "111")
-                Form1.isAdmin = true;
-            else
-                Form1.isAdmin = false;
-            if (dt.Rows.Count > 0)
+            string sqlQuery = $"SELECT * FROM Врачи WHERE Фамилия = '{loginText.Text}' AND Специализация = '{loginPassword.Text}'";
+            if (db.InvokeSqlQuery(sqlQuery) > 0)
             {
+                Form1.isAdmin = (loginText.Text == "Геров" && loginPassword.Text == "Хирург") ? true : false;
                 Form1 f = new Form1();
                 Hide();
                 f.Show();
             }
-            else
-                MessageBox.Show("No");
+            else MessageBox.Show("Неправильный логин или пароль!");
         }
 
         private void BackBtn_Click(object sender, EventArgs e)
         {
-            Hide();
+            Dispose();
+            Application.Exit();
         }
     }
 }

@@ -30,47 +30,36 @@
         {
             this.components = new System.ComponentModel.Container();
             this.dataGridView = new System.Windows.Forms.DataGridView();
-            this.payerBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jKHInfoDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.jKHInfoDataSet = new JKHApp.JKHInfoDataSet();
-            this.tariffReceiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.кодПациентаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.фамилияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.имяDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.отчествоDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.датаРожденияDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.адресDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ambulanceDataSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.ambulanceDataSet = new JKHApp.AmbulanceDataSet();
             this.ExitBtn = new System.Windows.Forms.Button();
-            this.SendDataBtn = new System.Windows.Forms.Button();
-            this.ProfileBtn = new System.Windows.Forms.Button();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.payerToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.apartmentToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.companyToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.receiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.tariffReceiptToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.homeBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.apartmentBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.receiptBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.CloseBtn = new System.Windows.Forms.Button();
-            this.payerTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.PayerTableAdapter();
-            this.homeTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.HomeTableAdapter();
-            this.apartmentTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.ApartmentTableAdapter();
-            this.companyTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.CompanyTableAdapter();
-            this.receiptTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.ReceiptTableAdapter();
-            this.tariffReceiptTableAdapter = new JKHApp.JKHInfoDataSetTableAdapters.TariffReceiptTableAdapter();
-            this.idDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ageDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clientsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doctorsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.callsMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.doctorsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.doctorsTableAdapter = new JKHApp.AmbulanceDataSetTableAdapters.ВрачиTableAdapter();
+            this.callsBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.callsTableAdapter = new JKHApp.AmbulanceDataSetTableAdapters.ВызовыTableAdapter();
+            this.clientsTableAdapter = new JKHApp.AmbulanceDataSetTableAdapters.ПациентыTableAdapter();
+            this.searchBox = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.searchButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payerBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKHInfoDataSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKHInfoDataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tariffReceiptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataSet)).BeginInit();
             this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView
@@ -80,17 +69,18 @@
             this.dataGridView.AllowUserToDeleteRows = false;
             this.dataGridView.AllowUserToOrderColumns = true;
             this.dataGridView.AutoGenerateColumns = false;
-            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dataGridView.AutoSizeRowsMode = System.Windows.Forms.DataGridViewAutoSizeRowsMode.AllCells;
             this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.idDataGridViewTextBoxColumn,
-            this.nameDataGridViewTextBoxColumn,
-            this.lastNameDataGridViewTextBoxColumn,
-            this.middleNameDataGridViewTextBoxColumn,
-            this.ageDataGridViewTextBoxColumn,
-            this.addressDataGridViewTextBoxColumn});
-            this.dataGridView.DataSource = this.payerBindingSource;
+            this.кодПациентаDataGridViewTextBoxColumn,
+            this.фамилияDataGridViewTextBoxColumn,
+            this.имяDataGridViewTextBoxColumn,
+            this.отчествоDataGridViewTextBoxColumn,
+            this.датаРожденияDataGridViewTextBoxColumn,
+            this.адресDataGridViewTextBoxColumn,
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn});
+            this.dataGridView.DataSource = this.clientsBindingSource;
             this.dataGridView.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView.Location = new System.Drawing.Point(0, 93);
             this.dataGridView.Name = "dataGridView";
@@ -100,255 +90,206 @@
             this.dataGridView.Size = new System.Drawing.Size(800, 359);
             this.dataGridView.TabIndex = 0;
             // 
-            // payerBindingSource
+            // кодПациентаDataGridViewTextBoxColumn
             // 
-            this.payerBindingSource.DataMember = "Payer";
-            this.payerBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.кодПациентаDataGridViewTextBoxColumn.DataPropertyName = "КодПациента";
+            this.кодПациентаDataGridViewTextBoxColumn.HeaderText = "КодПациента";
+            this.кодПациентаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.кодПациентаDataGridViewTextBoxColumn.Name = "кодПациентаDataGridViewTextBoxColumn";
+            this.кодПациентаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодПациентаDataGridViewTextBoxColumn.Width = 125;
             // 
-            // jKHInfoDataSetBindingSource
+            // фамилияDataGridViewTextBoxColumn
             // 
-            this.jKHInfoDataSetBindingSource.DataSource = this.jKHInfoDataSet;
-            this.jKHInfoDataSetBindingSource.Position = 0;
+            this.фамилияDataGridViewTextBoxColumn.DataPropertyName = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.HeaderText = "Фамилия";
+            this.фамилияDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.фамилияDataGridViewTextBoxColumn.Name = "фамилияDataGridViewTextBoxColumn";
+            this.фамилияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.фамилияDataGridViewTextBoxColumn.Width = 95;
             // 
-            // jKHInfoDataSet
+            // имяDataGridViewTextBoxColumn
             // 
-            this.jKHInfoDataSet.DataSetName = "JKHInfoDataSet";
-            this.jKHInfoDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.имяDataGridViewTextBoxColumn.DataPropertyName = "Имя";
+            this.имяDataGridViewTextBoxColumn.HeaderText = "Имя";
+            this.имяDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.имяDataGridViewTextBoxColumn.Name = "имяDataGridViewTextBoxColumn";
+            this.имяDataGridViewTextBoxColumn.ReadOnly = true;
+            this.имяDataGridViewTextBoxColumn.Width = 62;
             // 
-            // tariffReceiptBindingSource
+            // отчествоDataGridViewTextBoxColumn
             // 
-            this.tariffReceiptBindingSource.DataMember = "TariffReceipt";
-            this.tariffReceiptBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.отчествоDataGridViewTextBoxColumn.DataPropertyName = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.HeaderText = "Отчество";
+            this.отчествоDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.отчествоDataGridViewTextBoxColumn.Name = "отчествоDataGridViewTextBoxColumn";
+            this.отчествоDataGridViewTextBoxColumn.ReadOnly = true;
+            this.отчествоDataGridViewTextBoxColumn.Width = 99;
+            // 
+            // датаРожденияDataGridViewTextBoxColumn
+            // 
+            this.датаРожденияDataGridViewTextBoxColumn.DataPropertyName = "ДатаРождения";
+            this.датаРожденияDataGridViewTextBoxColumn.HeaderText = "ДатаРождения";
+            this.датаРожденияDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.датаРожденияDataGridViewTextBoxColumn.Name = "датаРожденияDataGridViewTextBoxColumn";
+            this.датаРожденияDataGridViewTextBoxColumn.ReadOnly = true;
+            this.датаРожденияDataGridViewTextBoxColumn.Width = 133;
+            // 
+            // адресDataGridViewTextBoxColumn
+            // 
+            this.адресDataGridViewTextBoxColumn.DataPropertyName = "Адрес";
+            this.адресDataGridViewTextBoxColumn.HeaderText = "Адрес";
+            this.адресDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.адресDataGridViewTextBoxColumn.Name = "адресDataGridViewTextBoxColumn";
+            this.адресDataGridViewTextBoxColumn.ReadOnly = true;
+            this.адресDataGridViewTextBoxColumn.Width = 76;
+            // 
+            // кодЛичногоВрачаDataGridViewTextBoxColumn
+            // 
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.DataPropertyName = "КодЛичногоВрача";
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.HeaderText = "КодЛичногоВрача";
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.MinimumWidth = 6;
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.Name = "кодЛичногоВрачаDataGridViewTextBoxColumn";
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.ReadOnly = true;
+            this.кодЛичногоВрачаDataGridViewTextBoxColumn.Width = 156;
+            // 
+            // clientsBindingSource
+            // 
+            this.clientsBindingSource.DataMember = "Пациенты";
+            this.clientsBindingSource.DataSource = this.ambulanceDataSetBindingSource;
+            // 
+            // ambulanceDataSetBindingSource
+            // 
+            this.ambulanceDataSetBindingSource.DataSource = this.ambulanceDataSet;
+            this.ambulanceDataSetBindingSource.Position = 0;
+            // 
+            // ambulanceDataSet
+            // 
+            this.ambulanceDataSet.DataSetName = "AmbulanceDataSet";
+            this.ambulanceDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // ExitBtn
             // 
             this.ExitBtn.BackColor = System.Drawing.Color.Red;
+            this.ExitBtn.ForeColor = System.Drawing.Color.White;
             this.ExitBtn.Location = new System.Drawing.Point(709, 41);
             this.ExitBtn.Name = "ExitBtn";
             this.ExitBtn.Size = new System.Drawing.Size(79, 34);
             this.ExitBtn.TabIndex = 1;
-            this.ExitBtn.Text = "EXIT";
+            this.ExitBtn.Text = "ВЫХОД";
             this.ExitBtn.UseVisualStyleBackColor = false;
             this.ExitBtn.Click += new System.EventHandler(this.ExitBtn_Click);
-            // 
-            // SendDataBtn
-            // 
-            this.SendDataBtn.BackColor = System.Drawing.Color.Orange;
-            this.SendDataBtn.Location = new System.Drawing.Point(12, 31);
-            this.SendDataBtn.Name = "SendDataBtn";
-            this.SendDataBtn.Size = new System.Drawing.Size(152, 54);
-            this.SendDataBtn.TabIndex = 4;
-            this.SendDataBtn.Text = "ВНЕСТИ ДАННЫЕ";
-            this.SendDataBtn.UseVisualStyleBackColor = false;
-            this.SendDataBtn.Click += new System.EventHandler(this.SendDataBtn_Click);
-            // 
-            // ProfileBtn
-            // 
-            this.ProfileBtn.BackColor = System.Drawing.Color.DeepSkyBlue;
-            this.ProfileBtn.Location = new System.Drawing.Point(621, 41);
-            this.ProfileBtn.Name = "ProfileBtn";
-            this.ProfileBtn.Size = new System.Drawing.Size(82, 34);
-            this.ProfileBtn.TabIndex = 5;
-            this.ProfileBtn.Text = "PROFILE";
-            this.ProfileBtn.UseVisualStyleBackColor = false;
-            this.ProfileBtn.Click += new System.EventHandler(this.ProfileBtn_Click);
             // 
             // menuStrip1
             // 
             this.menuStrip1.Dock = System.Windows.Forms.DockStyle.None;
             this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.payerToolStripMenuItem,
-            this.homeToolStripMenuItem,
-            this.apartmentToolStripMenuItem,
-            this.companyToolStripMenuItem,
-            this.receiptToolStripMenuItem,
-            this.tariffReceiptToolStripMenuItem});
+            this.clientsMenuItem,
+            this.doctorsMenuItem,
+            this.callsMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(493, 28);
+            this.menuStrip1.Size = new System.Drawing.Size(246, 28);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // payerToolStripMenuItem
+            // clientsMenuItem
             // 
-            this.payerToolStripMenuItem.Name = "payerToolStripMenuItem";
-            this.payerToolStripMenuItem.Size = new System.Drawing.Size(58, 24);
-            this.payerToolStripMenuItem.Text = "Payer";
-            this.payerToolStripMenuItem.Click += new System.EventHandler(this.payerToolStripMenuItem_Click);
+            this.clientsMenuItem.Name = "clientsMenuItem";
+            this.clientsMenuItem.Size = new System.Drawing.Size(94, 24);
+            this.clientsMenuItem.Text = "Пациенты";
+            this.clientsMenuItem.Click += new System.EventHandler(this.clientsMenuItem_Click);
             // 
-            // homeToolStripMenuItem
+            // doctorsMenuItem
             // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(64, 24);
-            this.homeToolStripMenuItem.Text = "Home";
-            this.homeToolStripMenuItem.Click += new System.EventHandler(this.homeToolStripMenuItem_Click);
+            this.doctorsMenuItem.Name = "doctorsMenuItem";
+            this.doctorsMenuItem.Size = new System.Drawing.Size(66, 24);
+            this.doctorsMenuItem.Text = "Врачи";
+            this.doctorsMenuItem.Click += new System.EventHandler(this.doctorsMenuItem_Click);
             // 
-            // apartmentToolStripMenuItem
+            // callsMenuItem
             // 
-            this.apartmentToolStripMenuItem.Name = "apartmentToolStripMenuItem";
-            this.apartmentToolStripMenuItem.Size = new System.Drawing.Size(94, 24);
-            this.apartmentToolStripMenuItem.Text = "Apartment";
-            this.apartmentToolStripMenuItem.Click += new System.EventHandler(this.apartmentToolStripMenuItem_Click);
+            this.callsMenuItem.Name = "callsMenuItem";
+            this.callsMenuItem.Size = new System.Drawing.Size(78, 24);
+            this.callsMenuItem.Text = "Вызовы";
+            this.callsMenuItem.Click += new System.EventHandler(this.callsMenuItem_Click);
             // 
-            // companyToolStripMenuItem
+            // doctorsBindingSource
             // 
-            this.companyToolStripMenuItem.Name = "companyToolStripMenuItem";
-            this.companyToolStripMenuItem.Size = new System.Drawing.Size(86, 24);
-            this.companyToolStripMenuItem.Text = "Company";
-            this.companyToolStripMenuItem.Click += new System.EventHandler(this.companyToolStripMenuItem_Click);
+            this.doctorsBindingSource.DataMember = "Врачи";
+            this.doctorsBindingSource.DataSource = this.ambulanceDataSetBindingSource;
             // 
-            // receiptToolStripMenuItem
+            // doctorsTableAdapter
             // 
-            this.receiptToolStripMenuItem.Name = "receiptToolStripMenuItem";
-            this.receiptToolStripMenuItem.Size = new System.Drawing.Size(73, 24);
-            this.receiptToolStripMenuItem.Text = "Receipt";
-            this.receiptToolStripMenuItem.Click += new System.EventHandler(this.receiptToolStripMenuItem_Click);
+            this.doctorsTableAdapter.ClearBeforeFill = true;
             // 
-            // tariffReceiptToolStripMenuItem
+            // callsBindingSource
             // 
-            this.tariffReceiptToolStripMenuItem.Name = "tariffReceiptToolStripMenuItem";
-            this.tariffReceiptToolStripMenuItem.Size = new System.Drawing.Size(110, 24);
-            this.tariffReceiptToolStripMenuItem.Text = "Tariff Receipt";
-            this.tariffReceiptToolStripMenuItem.Click += new System.EventHandler(this.tariffReceiptToolStripMenuItem_Click);
+            this.callsBindingSource.DataMember = "Вызовы";
+            this.callsBindingSource.DataSource = this.ambulanceDataSetBindingSource;
             // 
-            // homeBindingSource
+            // callsTableAdapter
             // 
-            this.homeBindingSource.DataMember = "Home";
-            this.homeBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.callsTableAdapter.ClearBeforeFill = true;
             // 
-            // apartmentBindingSource
+            // clientsTableAdapter
             // 
-            this.apartmentBindingSource.DataMember = "Apartment";
-            this.apartmentBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.clientsTableAdapter.ClearBeforeFill = true;
             // 
-            // companyBindingSource
+            // searchBox
             // 
-            this.companyBindingSource.DataMember = "Company";
-            this.companyBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.searchBox.Location = new System.Drawing.Point(67, 47);
+            this.searchBox.Name = "searchBox";
+            this.searchBox.Size = new System.Drawing.Size(123, 22);
+            this.searchBox.TabIndex = 8;
             // 
-            // receiptBindingSource
+            // label1
             // 
-            this.receiptBindingSource.DataMember = "Receipt";
-            this.receiptBindingSource.DataSource = this.jKHInfoDataSetBindingSource;
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 50);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 16);
+            this.label1.TabIndex = 9;
+            this.label1.Text = "Поиск:";
             // 
-            // CloseBtn
+            // searchButton
             // 
-            this.CloseBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.CloseBtn.Location = new System.Drawing.Point(770, 0);
-            this.CloseBtn.Margin = new System.Windows.Forms.Padding(0);
-            this.CloseBtn.Name = "CloseBtn";
-            this.CloseBtn.Size = new System.Drawing.Size(30, 28);
-            this.CloseBtn.TabIndex = 7;
-            this.CloseBtn.Text = "x";
-            this.CloseBtn.UseVisualStyleBackColor = true;
-            this.CloseBtn.Click += new System.EventHandler(this.CloseBtn_Click);
-            // 
-            // payerTableAdapter
-            // 
-            this.payerTableAdapter.ClearBeforeFill = true;
-            // 
-            // homeTableAdapter
-            // 
-            this.homeTableAdapter.ClearBeforeFill = true;
-            // 
-            // apartmentTableAdapter
-            // 
-            this.apartmentTableAdapter.ClearBeforeFill = true;
-            // 
-            // companyTableAdapter
-            // 
-            this.companyTableAdapter.ClearBeforeFill = true;
-            // 
-            // receiptTableAdapter
-            // 
-            this.receiptTableAdapter.ClearBeforeFill = true;
-            // 
-            // tariffReceiptTableAdapter
-            // 
-            this.tariffReceiptTableAdapter.ClearBeforeFill = true;
-            // 
-            // idDataGridViewTextBoxColumn
-            // 
-            this.idDataGridViewTextBoxColumn.DataPropertyName = "Id";
-            this.idDataGridViewTextBoxColumn.FillWeight = 128.3422F;
-            this.idDataGridViewTextBoxColumn.HeaderText = "Id";
-            this.idDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.idDataGridViewTextBoxColumn.Name = "idDataGridViewTextBoxColumn";
-            this.idDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // nameDataGridViewTextBoxColumn
-            // 
-            this.nameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.nameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
-            this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.nameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
-            this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // lastNameDataGridViewTextBoxColumn
-            // 
-            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
-            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
-            this.lastNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
-            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // middleNameDataGridViewTextBoxColumn
-            // 
-            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.FillWeight = 94.33157F;
-            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
-            this.middleNameDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
-            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // ageDataGridViewTextBoxColumn
-            // 
-            this.ageDataGridViewTextBoxColumn.DataPropertyName = "Age";
-            this.ageDataGridViewTextBoxColumn.FillWeight = 94.33157F;
-            this.ageDataGridViewTextBoxColumn.HeaderText = "Age";
-            this.ageDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.ageDataGridViewTextBoxColumn.Name = "ageDataGridViewTextBoxColumn";
-            this.ageDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // addressDataGridViewTextBoxColumn
-            // 
-            this.addressDataGridViewTextBoxColumn.DataPropertyName = "Address";
-            this.addressDataGridViewTextBoxColumn.FillWeight = 94.33157F;
-            this.addressDataGridViewTextBoxColumn.HeaderText = "Address";
-            this.addressDataGridViewTextBoxColumn.MinimumWidth = 6;
-            this.addressDataGridViewTextBoxColumn.Name = "addressDataGridViewTextBoxColumn";
-            this.addressDataGridViewTextBoxColumn.ReadOnly = true;
+            this.searchButton.BackColor = System.Drawing.Color.Green;
+            this.searchButton.ForeColor = System.Drawing.Color.White;
+            this.searchButton.Location = new System.Drawing.Point(196, 41);
+            this.searchButton.Name = "searchButton";
+            this.searchButton.Size = new System.Drawing.Size(79, 34);
+            this.searchButton.TabIndex = 10;
+            this.searchButton.Text = "ПОИСК";
+            this.searchButton.UseVisualStyleBackColor = false;
+            this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.CloseBtn);
-            this.Controls.Add(this.ProfileBtn);
-            this.Controls.Add(this.SendDataBtn);
+            this.Controls.Add(this.searchButton);
+            this.Controls.Add(this.label1);
+            this.Controls.Add(this.searchBox);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.ExitBtn);
             this.Controls.Add(this.menuStrip1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.MainMenuStrip = this.menuStrip1;
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Главное меню";
+            this.Load += new System.EventHandler(this.Form1_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.payerBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKHInfoDataSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.jKHInfoDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tariffReceiptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clientsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ambulanceDataSet)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.homeBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.apartmentBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.receiptBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.doctorsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.callsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -357,37 +298,35 @@
         #endregion
 
         private System.Windows.Forms.DataGridView dataGridView;
-        private System.Windows.Forms.BindingSource jKHInfoDataSetBindingSource;
-        private JKHInfoDataSet jKHInfoDataSet;
         private System.Windows.Forms.Button ExitBtn;
-        private System.Windows.Forms.BindingSource payerBindingSource;
-        private JKHInfoDataSetTableAdapters.PayerTableAdapter payerTableAdapter;
-        private System.Windows.Forms.Button SendDataBtn;
-        private System.Windows.Forms.Button ProfileBtn;
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem payerToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem apartmentToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem companyToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem receiptToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem tariffReceiptToolStripMenuItem;
-        private System.Windows.Forms.BindingSource homeBindingSource;
-        private JKHInfoDataSetTableAdapters.HomeTableAdapter homeTableAdapter;
-        private System.Windows.Forms.BindingSource apartmentBindingSource;
-        private JKHInfoDataSetTableAdapters.ApartmentTableAdapter apartmentTableAdapter;
-        private System.Windows.Forms.BindingSource companyBindingSource;
-        private JKHInfoDataSetTableAdapters.CompanyTableAdapter companyTableAdapter;
-        private System.Windows.Forms.BindingSource receiptBindingSource;
-        private JKHInfoDataSetTableAdapters.ReceiptTableAdapter receiptTableAdapter;
-        private System.Windows.Forms.BindingSource tariffReceiptBindingSource;
-        private JKHInfoDataSetTableAdapters.TariffReceiptTableAdapter tariffReceiptTableAdapter;
-        private System.Windows.Forms.Button CloseBtn;
+        private System.Windows.Forms.ToolStripMenuItem clientsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem doctorsMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem callsMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn idDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn ageDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressDataGridViewTextBoxColumn;
+        private System.Windows.Forms.BindingSource ambulanceDataSetBindingSource;
+        private AmbulanceDataSet ambulanceDataSet;
+        private System.Windows.Forms.BindingSource doctorsBindingSource;
+        private AmbulanceDataSetTableAdapters.ВрачиTableAdapter doctorsTableAdapter;
+        private System.Windows.Forms.BindingSource callsBindingSource;
+        private AmbulanceDataSetTableAdapters.ВызовыTableAdapter callsTableAdapter;
+        private System.Windows.Forms.BindingSource clientsBindingSource;
+        private AmbulanceDataSetTableAdapters.ПациентыTableAdapter clientsTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодПациентаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn фамилияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn имяDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn отчествоDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn датаРожденияDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn адресDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn кодЛичногоВрачаDataGridViewTextBoxColumn;
+        private System.Windows.Forms.TextBox searchBox;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Button searchButton;
     }
 }
 

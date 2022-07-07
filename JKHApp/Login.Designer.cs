@@ -42,9 +42,9 @@
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.label1.Location = new System.Drawing.Point(63, 49);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 20);
+            this.label1.Size = new System.Drawing.Size(59, 20);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Login";
+            this.label1.Text = "Логин";
             // 
             // PassLabel
             // 
@@ -52,9 +52,9 @@
             this.PassLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
             this.PassLabel.Location = new System.Drawing.Point(63, 129);
             this.PassLabel.Name = "PassLabel";
-            this.PassLabel.Size = new System.Drawing.Size(83, 20);
+            this.PassLabel.Size = new System.Drawing.Size(72, 20);
             this.PassLabel.TabIndex = 1;
-            this.PassLabel.Text = "Password";
+            this.PassLabel.Text = "Пароль";
             // 
             // loginText
             // 
@@ -63,7 +63,6 @@
             this.loginText.Name = "loginText";
             this.loginText.Size = new System.Drawing.Size(247, 36);
             this.loginText.TabIndex = 2;
-            this.loginText.Text = "Введите фамилию";
             // 
             // loginPassword
             // 
@@ -72,7 +71,6 @@
             this.loginPassword.Name = "loginPassword";
             this.loginPassword.Size = new System.Drawing.Size(247, 36);
             this.loginPassword.TabIndex = 3;
-            this.loginPassword.Text = "Введите пароль";
             // 
             // BackBtn
             // 
@@ -81,7 +79,7 @@
             this.BackBtn.Name = "BackBtn";
             this.BackBtn.Size = new System.Drawing.Size(118, 38);
             this.BackBtn.TabIndex = 5;
-            this.BackBtn.Text = "BACK";
+            this.BackBtn.Text = "ВЫХОД";
             this.BackBtn.UseVisualStyleBackColor = true;
             this.BackBtn.Click += new System.EventHandler(this.BackBtn_Click);
             // 
@@ -92,7 +90,7 @@
             this.loginEnter.Name = "loginEnter";
             this.loginEnter.Size = new System.Drawing.Size(118, 38);
             this.loginEnter.TabIndex = 6;
-            this.loginEnter.Text = "LOGIN";
+            this.loginEnter.Text = "ВХОД";
             this.loginEnter.UseVisualStyleBackColor = true;
             this.loginEnter.Click += new System.EventHandler(this.loginEnter_Click);
             // 
@@ -110,7 +108,7 @@
             this.Controls.Add(this.label1);
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Login";
+            this.Text = "Авторизация";
             this.ResumeLayout(false);
             this.PerformLayout();
 
